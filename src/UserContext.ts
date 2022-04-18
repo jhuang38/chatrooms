@@ -1,9 +1,9 @@
 import { createContext } from "react";
 
-type UserType = {
+interface UserType {
     user?: any,
     loading?: boolean,
-    error?: any
+    error?: Error | null | undefined
 };
 
 export const UserContext = createContext<UserType>({});

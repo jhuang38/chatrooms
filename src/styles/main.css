@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap");
+.login-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.95);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 2em;
+  padding: 2em;
+  gap: 1em;
+  width: max(30vw, 300px);
+  height: min(45vh, 500px);
+}
+
+.login-page h1 {
+  margin: 0;
+}
+
+.login-page .login-icon {
+  width: 30%;
+  height: auto;
+}
+
+.login-page button {
+  padding: 1.5em;
+  border-radius: 2em;
+  border: none;
+  color: black;
+  background-color: #FF008E;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  font-family: 'Manrope', sans-serif;
+}
+
+.page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: radial-gradient(#FF008E, #D22779, #612897, #0C1E7F);
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+}
+/*# sourceMappingURL=main.css.map */

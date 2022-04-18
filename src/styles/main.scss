@@ -1,0 +1,25 @@
+$pink: #FF008E;
+$maroon: #D22779;
+$purple: #612897;
+$navy: #0C1E7F;
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+@import './_login.scss';
+
+body {
+    margin: 0;
+}
+
+* {
+    font-family: 'Manrope', sans-serif;
+}
+
+.page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: radial-gradient($pink, $maroon, $purple, $navy);
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+}

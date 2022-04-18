@@ -5,8 +5,8 @@ import Signout from './Signout';
 const Landing:FC = () => {
     const {user} = useContext(UserContext);
     return (
-        <div>
-            Welcome {user.displayName}
+        <div className = 'landing-page'>
+            <h1>Welcome {user.displayName}</h1>
             <img src = {user.photoURL} alt = 'profile'/>
             <Signout/>
         </div>

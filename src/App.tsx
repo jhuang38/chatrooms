@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {FC} from 'react';
+import {Route, Routes} from 'react-router-dom';
+import Login from './Components/Login';
+import { UserContext } from './UserContext';
+import {useAuthState} from 'react-firebase-hooks/auth';
+import { userAuth } from './firebase-config';
+import Landing from './Components/Landing';
 
-function App() {
+
+const App:FC = () =>  {
+  const [user, loading, error] = useAuthState(userAuth);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <UserContext.Provider value = {{user, loading, error}}>
+        <Routes>
+          <Route path = '/' element = {user? <Landing/> : <Login/>}/>
+        </Routes>
+      </UserContext.Provider>
+      
+    </>
   );
 }
 

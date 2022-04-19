@@ -3,10 +3,6 @@ $maroon: #D22779;
 $purple: #612897;
 $navy: #0C1E7F;
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
-@import './_login.scss';
-@import './_landing.scss';
-
 body {
     margin: 0;
 }
@@ -24,3 +20,36 @@ body {
     height: 100vh;
     padding: 0;
 }
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 2em;
+    padding: 2em;
+    width: #{"max(30vw, 300px)"};
+    height: #{"max(45vh, 500px)"};
+    gap: #{"min(1em, 10px)"};
+    h1, p {
+        margin: 0;
+    }
+}
+
+.button {
+    padding: 1.5em;
+    border-radius: 2em;
+    border: none;
+    color: black;
+    background-color: $pink;
+    font-size: 1em;
+    font-weight: bold;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+@import './_login.scss';
+@import './_landing.scss';
+

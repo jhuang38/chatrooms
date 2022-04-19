@@ -1,10 +1,19 @@
 .landing-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 1.5em;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 2em;
-    padding: 2em;
-    gap: 1em;
+    img {
+        height: 30%;
+        width: auto;
+        border-radius: 50%;
+        border: 0.5em solid transparent;
+        background: radial-gradient($navy, $pink);
+    }
+    .button-container {
+        display: flex;
+        gap: 1em;
+        flex-shrink: 1;
+    }
+    p {
+        margin: 0;
+    }
 }

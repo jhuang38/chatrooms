@@ -13,4 +13,22 @@ const button_hover = {
     }
 }
 
-export {button_hover};
+// page transition not working for whatever reason?
+const page_transition = {
+    initial: {
+        x: '-100vw',
+        opacity: 0
+    },
+    animate: {
+        //x: 0,
+        x:0,
+        opacity: 1,
+        duration: 0.25
+    },
+    exit: {
+        x: '100vw',
+        opacity: 0,
+    },
+}
+
+export {button_hover, page_transition};

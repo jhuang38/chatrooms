@@ -1,6 +1,6 @@
 import {FC, useContext} from 'react';
 import {motion} from 'framer-motion';
-import { button_hover } from '../motion-variants';
+import { button_hover, page_transition } from '../motion-variants';
 import { UserContext } from '../UserContext';
 import profile_picture from '../assets/default_profile.svg';
 import Signout from './Signout';
@@ -12,7 +12,7 @@ const Landing:FC = () => {
         e.target.src = profile_picture;
     }
     return (
-        <div className = 'landing-page card'>
+        <motion.div variants = {page_transition} initial = 'initial' animate = 'animate' exit = 'exit' className = 'landing-page card'>
             <h1>{user.displayName}</h1>
             <img src = {user.photoURL} alt = 'profile' onError = {setDefaultPfp}/>
             <p>To get started, join an existing chat room or create a new one with a code! </p>
@@ -21,7 +21,8 @@ const Landing:FC = () => {
                 <motion.button variants = {button_hover} animate = 'initial' whileHover = 'hover' whileFocus = 'hover' className = 'button'>Open Chat Room</motion.button>
                 <Signout/>
             </div>
-        </div>
+        </motion.div>
+        
     )
 }
 

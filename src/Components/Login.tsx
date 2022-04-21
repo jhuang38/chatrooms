@@ -16,7 +16,7 @@ const Login:FC = () => {
             <h1>ChatRooms</h1>
             <img src = {chatIcon} alt = 'icon' className = 'login-icon'/>
             <p>Create chat rooms and chat with others in real-time!</p>
-            <motion.button variants = {button_hover} animate = 'initial' whileHover = 'hover' whileFocus = 'hover' onClick = {googleSignIn} className = 'button'>
+            <motion.button variants = {button_hover} animate = 'initial' whileHover = 'hover' whileFocus = 'hover' whileTap = 'click' onClick = {googleSignIn} className = 'button'>
                 <FontAwesomeIcon icon={faArrowRightToBracket} />
             </motion.button>
         </motion.div>

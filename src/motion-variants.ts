@@ -4,12 +4,22 @@ const button_hover = {
         backgroundColor: '#FF008E'
     },
     hover: {
+        scale: 1.05,
         color: '#FF008E',
         backgroundColor: '#000000',
         transition: {
-            duration: 0.2,
+            duration: 0.1,
             ease: 'linear'
         }
+    },
+    click: {
+        scale: 0.90,
+        color: '#FF008E',
+        backgroundColor: '#000000',
+        transition: {
+            duration: 0.1,
+            ease: 'linear'
+        } 
     }
 }
 
@@ -21,9 +31,14 @@ const page_transition = {
     },
     animate: {
         //x: 0,
-        x:0,
+        x:'0',
         opacity: 1,
-        duration: 0.25
+        transition: {
+            duration: 0.2,
+            type: 'spring', 
+            damping: 25,
+            stiffness: 500
+        }
     },
     exit: {
         x: '100vw',

@@ -12,7 +12,7 @@ const Signout:FC = () => {
     }
     return (
         <div>
-            <motion.button variants = {button_hover} animate = 'initial' whileHover = 'hover' whileFocus = 'hover' onClick = {userSignOut} className = 'button'>
+            <motion.button variants = {button_hover} animate = 'initial' whileHover = 'hover' whileFocus = 'hover' whileTap = 'click' onClick = {userSignOut} className = 'button'>
                 <FontAwesomeIcon icon={faArrowRightFromBracket} />
             </motion.button>
         </div>

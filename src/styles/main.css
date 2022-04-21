@@ -38,7 +38,7 @@ body {
   border-radius: 2em;
   padding: 2em;
   width: max(30vw, 300px);
-  height: max(45vh, 500px);
+  height: max(45vh, 400px);
   gap: min(1em, 10px);
 }
 
@@ -79,7 +79,7 @@ body {
           justify-content: center;
 }
 
-.landing-page img {
+.landing-page .pfp {
   height: 30%;
   width: auto;
   border-radius: 50%;
@@ -98,5 +98,61 @@ body {
 
 .landing-page p {
   margin: 0;
+}
+
+.modal-backdrop {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: #000000e1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+.modal {
+  margin: auto;
+  gap: 1.5em;
+}
+
+.modal img {
+  height: max(30%, 100px);
+  width: auto;
+}
+
+.modal .code-input-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.25em;
+}
+
+.modal .code-input-form input, .modal .code-input-form button {
+  border-radius: 1em;
+  text-align: center;
+  padding: 0.5em;
+  border: none;
+}
+
+.modal .code-input-form input {
+  border-radius: 1em;
+  padding: 0.5em;
+}
+
+.modal .code-input-form button {
+  color: #000000;
+  background-color: #FF008E;
+  font-weight: bold;
 }
 /*# sourceMappingURL=main.css.map */

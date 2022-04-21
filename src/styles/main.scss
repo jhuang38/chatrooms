@@ -29,7 +29,7 @@ body {
     border-radius: 2em;
     padding: 2em;
     width: #{"max(30vw, 300px)"};
-    height: #{"max(45vh, 500px)"};
+    height: #{"max(45vh, 400px)"};
     gap: #{"min(1em, 10px)"};
     h1, p {
         margin: 0;
@@ -52,4 +52,5 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
 @import './_login.scss';
 @import './_landing.scss';
+@import './_modal.scss';
 

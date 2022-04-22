@@ -38,7 +38,7 @@ body {
   border-radius: 2em;
   padding: 2em;
   width: max(30vw, 300px);
-  height: max(45vh, 400px);
+  height: max(50vh, 400px);
   gap: min(1em, 10px);
 }
 
@@ -135,7 +135,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 0.25em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5em;
+  width: 100%;
 }
 
 .modal .code-input-form input, .modal .code-input-form button {
@@ -143,16 +147,13 @@ body {
   text-align: center;
   padding: 0.5em;
   border: none;
+  min-width: 50%;
+  max-width: 100%;
 }
 
 .modal .code-input-form input {
   border-radius: 1em;
   padding: 0.5em;
-}
-
-.modal .code-input-form button {
-  color: #000000;
-  background-color: #FF008E;
-  font-weight: bold;
+  border: 2px solid black;
 }
 /*# sourceMappingURL=main.css.map */

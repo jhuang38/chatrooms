@@ -20,21 +20,21 @@
     .code-input-form {
         display: flex;
         flex-direction: column;
-        gap: 0.25em;
+        align-items: center;
+        gap: 0.5em;
+        width: 100%;
         input, button {
             border-radius: 1em;
             text-align: center;
             padding: 0.5em;
             border: none;
+            min-width: 50%;
+            max-width: 100%;
         }
         input {
             border-radius: 1em;
             padding: 0.5em;
-        }
-        button {
-            color: #000000;
-            background-color: $pink;
-            font-weight: bold;
+            border: 2px solid black;
         }
     }
 }

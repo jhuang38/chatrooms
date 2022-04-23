@@ -19,6 +19,7 @@ body {
     width: 100vw;
     height: 100vh;
     padding: 0;
+    overflow: hidden;
 }
 
 .card {
@@ -28,7 +29,7 @@ body {
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 2em;
     padding: 2em;
-    width: #{"max(30vw, 300px)"};
+    width: #{"max(35vw, 350px)"};
     height: #{"max(50vh, 400px)"};
     gap: #{"min(1em, 10px)"};
     h1, p {
@@ -53,4 +54,5 @@ body {
 @import './_login.scss';
 @import './_landing.scss';
 @import './_modal.scss';
+@import './_chatroom.scss';
 

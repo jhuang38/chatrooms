@@ -34,8 +34,7 @@ const page_transition = {
         x:'0',
         opacity: 1,
         transition: {
-            delay: 0.2,
-            duration: 0.2,
+            duration: 0.15,
             type: 'spring', 
             damping: 25,
             stiffness: 500

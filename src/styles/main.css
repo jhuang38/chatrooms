@@ -21,6 +21,7 @@ body {
   width: 100vw;
   height: 100vh;
   padding: 0;
+  overflow: hidden;
 }
 
 .card {
@@ -37,7 +38,7 @@ body {
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 2em;
   padding: 2em;
-  width: max(30vw, 300px);
+  width: max(35vw, 350px);
   height: max(50vh, 400px);
   gap: min(1em, 10px);
 }
@@ -155,5 +156,34 @@ body {
   border-radius: 1em;
   padding: 0.5em;
   border: 2px solid black;
+}
+
+.chatroom {
+  height: max(85%, 400px);
+}
+
+.chatroom header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.chatroom header h1 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chatroom header .backarrow {
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */

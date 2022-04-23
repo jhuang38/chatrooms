@@ -1,18 +1,27 @@
 import {FC, useContext, useState} from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
+import {useNavigate} from 'react-router-dom';
 import { button_hover, page_transition } from '../motion-variants';
-import { UserContext } from '../UserContext';
+import UserContext from '../UserContext';
 import profile_picture from '../assets/default_profile.svg';
 import forum_icon from '../assets/forum_icon.svg';
 import Signout from './Signout';
 import Modal from './Modal/Modal';
 import RoomCodeInput from './RoomCodeInput';
+import RoomContext from '../RoomContext';
 
 const Landing:FC = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const close = () => setModalOpen(false);
     const open = () => setModalOpen(true);
     const launchModal = () => modalOpen? close():open();
+
+    const {roomCode} = useContext(RoomContext)
+    const navigate = useNavigate();
+    const openChatWindow = () => {
+        close();
+        navigate(`/room/${roomCode}`);
+    }
 
     const {user} = useContext(UserContext);
     // any type is event type
@@ -44,7 +53,7 @@ const Landing:FC = () => {
                     <p>For example, if you were in the "bob" chat room,
                         you would be able to see the most recent messages in the "bob" room but not the "foo" room.
                     </p>
-                    <RoomCodeInput/>
+                    <RoomCodeInput onFormSubmit={openChatWindow}/>
                 </Modal>
                 }
             </AnimatePresence>

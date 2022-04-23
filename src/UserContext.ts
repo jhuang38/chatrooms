@@ -6,4 +6,6 @@ interface UserType {
     error?: Error | null | undefined
 };
 
-export const UserContext = createContext<UserType>({});
+const UserContext = createContext<UserType>({});
+
+export default UserContext;

@@ -17,7 +17,6 @@ const RoomCodeInput:FC<RoomInputProps> = ({onFormSubmit}) => {
 
     const formSubmit = (e:any) => {
         e.preventDefault();
-        console.log(roomCode);
         onFormSubmit();
     }
     return (

@@ -1,5 +1,4 @@
 import {FC, useContext} from 'react';
-import {motion} from 'framer-motion';
 import UserContext from '../UserContext';
 import profile_picture from '../assets/default_profile.svg';
 
@@ -16,7 +15,8 @@ const ChatMessage:FC<ChatMessageProps> = ({text, uid, photoURL}) => {
         e.target.src = profile_picture;
     }
     return (
-        <div className = {`message ${msgClass}`}>
+        <div 
+        className = {`message ${msgClass}`}>
             <img src = {photoURL} alt = 'profile' onError = {setDefaultPfp} />
             <p >{text}</p>
         </div>

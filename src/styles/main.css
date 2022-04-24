@@ -61,6 +61,15 @@ body {
   cursor: pointer;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D22779;
+  border-radius: 10em;
+}
+
 .login-page {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -188,6 +197,9 @@ body {
 }
 
 .chatroom .chat-messages {
+  overflow: scroll;
+  overflow-x: hidden;
+  padding-right: 1em;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -276,6 +288,7 @@ body {
       -ms-flex-positive: 1;
           flex-grow: 1;
   text-align: left;
+  padding: 0 0.75em 0;
 }
 
 .chatroom .chat-form button {

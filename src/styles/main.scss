@@ -51,6 +51,16 @@ body {
     }
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: $maroon;
+    border-radius: 10em;
+}
+  
+
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
 @import './_login.scss';
 @import './_landing.scss';

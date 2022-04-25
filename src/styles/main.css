@@ -229,10 +229,11 @@ body {
 
 .chatroom .chat-messages .message img {
   border-radius: 50%;
-  height: 1.875em;
-  width: auto;
+  width: 1.875em;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+  cursor: pointer;
 }
 
 .chatroom .chat-messages .message p {

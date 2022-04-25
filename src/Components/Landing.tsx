@@ -3,7 +3,6 @@ import {motion, AnimatePresence} from 'framer-motion';
 import {useNavigate} from 'react-router-dom';
 import { button_hover, page_transition } from '../motion-variants';
 import UserContext from '../UserContext';
-import profile_picture from '../assets/default_profile.svg';
 import forum_icon from '../assets/forum_icon.svg';
 import Signout from './Signout';
 import Modal from './Modal/Modal';
@@ -26,14 +25,14 @@ const Landing:FC = () => {
     const {user} = useContext(UserContext);
     // any type is event type
     const setDefaultPfp = (e:any) => {
-        e.target.src = profile_picture;
+        e.target.src = 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg';
     }
     return (
         <motion.div variants = {page_transition} initial = 'initial' animate = 'animate' exit = 'exit' className = 'landing-page card'>
             <h1>{user.displayName}</h1>
             <img src = {user.photoURL} alt = 'profile' onError = {setDefaultPfp} className = 'pfp'/>
             <p>To get started, join an existing chat room or create a new one with a code! </p>
-            <p>All messages will be deleted after 2 hours.</p>
+            <p>Messages stay in their respective chat rooms indefinitely. Be careful what you say!</p>
             <div className = 'button-container'>
                 <motion.button variants = {button_hover} 
                 animate = 'initial' 

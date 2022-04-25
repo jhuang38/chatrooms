@@ -1,24 +1,32 @@
 import {FC, useContext} from 'react';
 import UserContext from '../UserContext';
-import profile_picture from '../assets/default_profile.svg';
+import Tooltip from './Tooltip';
+import Tippy from '@tippyjs/react'
+import 'tippy.js/dist/tippy.css';
 
 interface ChatMessageProps {
-    text: string
-    uid: string
-    photoURL: string
+    key: string,
+    text: string,
+    uid: string,
+    photoURL: string,
+    sender: string,
+    createdAt: number,
+    tooltipKey: string
 }
 
-const ChatMessage:FC<ChatMessageProps> = ({text, uid, photoURL}) => {
+const ChatMessage:FC<ChatMessageProps> = ({key, text, uid, photoURL, sender, createdAt, tooltipKey}) => {
     const {user} = useContext(UserContext);
+
     const msgClass = (user.uid === uid)? 'sent':'received';
     const setDefaultPfp = (e:any) => {
-        e.target.src = profile_picture;
+        e.target.src = 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg';
     }
     return (
-        <div 
-        className = {`message ${msgClass}`}>
-            <img src = {photoURL} alt = 'profile' onError = {setDefaultPfp} />
-            <p >{text}</p>
+        <div className = {`message ${msgClass}`}>
+            <Tippy content = {<Tooltip sender = {sender} date={new Date(createdAt)}/>}>
+            <img data-tip data-for = {tooltipKey} src = {photoURL} alt = 'profile' onError = {setDefaultPfp}/>
+            </Tippy>
+            <p>{text}</p>
         </div>
     )
 }

@@ -1,10 +1,10 @@
-import {FC, useContext, useRef, useEffect} from 'react';
+import {FC, useContext, useRef} from 'react';
 import {motion} from 'framer-motion';
 import {page_transition, button_hover} from '../motion-variants';
 import {useParams, useNavigate} from'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { collection, orderBy, query, where, addDoc,serverTimestamp } from 'firebase/firestore';
+import { collection, orderBy, query, where, addDoc } from 'firebase/firestore';
 import { fsInstance } from '../firebase-config';
 import {useCollectionData} from 'react-firebase-hooks/firestore';
 import UserContext from '../UserContext';
@@ -27,16 +27,18 @@ const ChatRoom:FC = () => {
 
     const inputRef = useRef<HTMLInputElement>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
+
     const sendMessage = async (e:any) => {
         e.preventDefault();
         if (inputRef.current !== null && inputRef.current.value.length !== 0) {
-            const {uid, photoURL } = user;
+            const {uid, photoURL, displayName } = user;
             await addDoc(messagesRef, {
-                createdAt: serverTimestamp(),
+                createdAt: Date.now(),
                 photoURL,
                 roomid: roomCode,
                 text: inputRef.current.value,
-                uid
+                uid,
+                sender: displayName
             })
             inputRef.current.value = '';
             scrollRef.current?.scrollIntoView({behavior: 'smooth'});
@@ -54,7 +56,7 @@ const ChatRoom:FC = () => {
             </header>
             <main className = 'chat-messages'>
                 {
-                    messages && messages.map(msg => <ChatMessage key = {uniqid()} text = {msg.text} uid = {msg.uid} photoURL = {msg.photoURL}/>)
+                    messages && messages.map(msg => <ChatMessage key = {uniqid()} text = {msg.text} uid = {msg.uid} photoURL = {msg.photoURL} sender = {msg.sender} createdAt = {msg.createdAt} tooltipKey={uniqid()}/>)
                 }
                 <div ref={scrollRef}/>
 

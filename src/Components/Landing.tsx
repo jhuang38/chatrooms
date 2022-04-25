@@ -48,10 +48,10 @@ const Landing:FC = () => {
                 <Modal handleClose = {close}>
                     <h1>Join a chat room</h1>
                     <img src = {forum_icon} alt = 'forum'/>
-                    <p>Enter a room code to get started! All messages are contained to their own chat rooms.</p>
+                    <p>Enter a room code to get started! If you don't enter a room code, you will be put into the "default" chat room.
+                        All messages are contained to their own chat rooms. </p>
                     <p>For example, if you were in the "bob" chat room,
-                        you would be able to see the most recent messages in the "bob" room but not the "foo" room.
-                    </p>
+                        you would be able to see the messages in the "bob" room but not the "foo" room.</p>
                     <RoomCodeInput onFormSubmit={openChatWindow}/>
                 </Modal>
                 }

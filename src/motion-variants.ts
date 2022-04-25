@@ -31,10 +31,10 @@ const page_transition = {
     },
     animate: {
         //x: 0,
-        x:'0',
+        x:0,
         opacity: 1,
         transition: {
-            duration: 0.15,
+            duration: 0.2,
             type: 'spring', 
             damping: 25,
             stiffness: 500

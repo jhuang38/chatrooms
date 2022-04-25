@@ -31,8 +31,6 @@ const App:FC = () =>  {
         </AnimatePresence>
       </UserContext.Provider>
       </RoomContext.Provider>
-      
-      
     </div>
   );
 }

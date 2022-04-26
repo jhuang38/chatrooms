@@ -29,8 +29,8 @@ const Landing:FC = () => {
     }
     return (
         <motion.div variants = {page_transition} initial = 'initial' animate = 'animate' exit = 'exit' className = 'landing-page card'>
-            <h1>{user.displayName}</h1>
-            <img src = {user.photoURL} alt = 'profile' onError = {setDefaultPfp} className = 'pfp'/>
+            <h1>{user?.displayName}</h1>
+            <img src = {user?.photoURL? user.photoURL: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg'} alt = 'profile' onError = {setDefaultPfp} className = 'pfp'/>
             <p>To get started, join an existing chat room or create a new one with a code! </p>
             <p>Messages stay in their respective chat rooms indefinitely. Be careful what you say!</p>
             <div className = 'button-container'>

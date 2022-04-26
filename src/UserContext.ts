@@ -1,7 +1,11 @@
 import { createContext } from "react";
 
 interface UserType {
-    user?: any,
+    user?: {
+        displayName: string | null,
+        photoURL: string | null,
+        uid: string | null
+    } | null,
     loading?: boolean,
     error?: Error | null | undefined
 };

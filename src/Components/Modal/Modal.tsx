@@ -1,10 +1,10 @@
-import {FC} from 'react';
+import {FC, ReactNode} from 'react';
 import Backdrop from './Backdrop';
 import {motion} from 'framer-motion';
 
 interface ModalProps {
-    children: any,
-    handleClose: Function
+    children: ReactNode,
+    handleClose: () => void
 }
 
 const Modal:FC<ModalProps> = ({children, handleClose}) => {

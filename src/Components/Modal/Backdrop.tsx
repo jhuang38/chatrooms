@@ -1,10 +1,10 @@
-import { FC } from "react"
+import { FC, ReactNode } from "react"
 import { motion } from "framer-motion"
 
 // please replace this with actual types
 interface BackdropProps {
-    children?: any,
-    onClick?: any
+    children?: ReactNode,
+    onClick?: () => void
 }
 
 const Backdrop:FC<BackdropProps> = ({children, onClick}) => {

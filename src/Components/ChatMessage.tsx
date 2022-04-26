@@ -14,10 +14,10 @@ interface ChatMessageProps {
     tooltipKey: string
 }
 
-const ChatMessage:FC<ChatMessageProps> = ({key, text, uid, photoURL, sender, createdAt, tooltipKey}) => {
+const ChatMessage:FC<ChatMessageProps> = ({text, uid, photoURL, sender, createdAt, tooltipKey}) => {
     const {user} = useContext(UserContext);
 
-    const msgClass = (user.uid === uid)? 'sent':'received';
+    const msgClass = (!!user && user?.uid === uid)? 'sent':'received';
     const setDefaultPfp = (e:any) => {
         e.target.src = 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg';
     }

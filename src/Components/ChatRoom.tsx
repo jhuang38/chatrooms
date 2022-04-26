@@ -31,7 +31,7 @@ const ChatRoom:FC = () => {
     const sendMessage = async (e:any) => {
         e.preventDefault();
         if (inputRef.current !== null && inputRef.current.value.length !== 0) {
-            const {uid, photoURL, displayName } = user;
+            const {uid, photoURL, displayName } = user? user : {uid: 'none', photoURL: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg', displayName: 'none'};
             await addDoc(messagesRef, {
                 createdAt: Date.now(),
                 photoURL,
